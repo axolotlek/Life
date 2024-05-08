@@ -1,0 +1,19 @@
+{
+	"nodes":[
+		{"id":"7078a6262b1f3341","x":-584,"y":120,"width":400,"height":103,"type":"file","file":"Knowledge/Типы кофейных индустрий.md"},
+		{"id":"bf120199d61a1bcc","x":-860,"y":255,"width":400,"height":110,"type":"file","file":"Knowledge/Commodity.md"},
+		{"id":"82e8c10c02d58ecb","x":-260,"y":223,"width":400,"height":174,"type":"file","file":"Knowledge/Speciality.md"},
+		{"id":"f1fa5c6b0496b81e","x":-584,"y":-200,"width":400,"height":131,"type":"file","file":"Knowledge/Кофе.md"},
+		{"id":"dc16cfd7dc866fc2","x":-583,"y":-420,"width":400,"height":101,"type":"file","file":"Knowledge/Виды кофе.md"},
+		{"id":"e02c6fca9673a3c8","x":-375,"y":-1420,"width":400,"height":920,"type":"file","file":"Knowledge/Робуста.md"},
+		{"id":"2426c2e2a8996797","x":-783,"y":-1041,"width":400,"height":541,"type":"file","file":"Knowledge/Арабика.md"}
+	],
+	"edges":[
+		{"id":"a0c4453f44957813","fromNode":"f1fa5c6b0496b81e","fromSide":"bottom","toNode":"7078a6262b1f3341","toSide":"top"},
+		{"id":"90955c39fa1809c7","fromNode":"7078a6262b1f3341","fromSide":"bottom","toNode":"bf120199d61a1bcc","toSide":"right"},
+		{"id":"6b2aa6be6e720279","fromNode":"7078a6262b1f3341","fromSide":"bottom","toNode":"82e8c10c02d58ecb","toSide":"left"},
+		{"id":"2549a2ec98cb6d99","fromNode":"f1fa5c6b0496b81e","fromSide":"top","toNode":"dc16cfd7dc866fc2","toSide":"bottom"},
+		{"id":"4bdb05ba98cf0d05","fromNode":"dc16cfd7dc866fc2","fromSide":"top","toNode":"e02c6fca9673a3c8","toSide":"bottom"},
+		{"id":"54aef6b485aafdbe","fromNode":"dc16cfd7dc866fc2","fromSide":"top","toNode":"2426c2e2a8996797","toSide":"bottom"}
+	]
+}

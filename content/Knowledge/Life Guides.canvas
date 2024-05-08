@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"Base/00Life Guides.md","width":500,"height":500,"y":600,"x":0,"type":"file","file":"Base/Life Guides.md","color":"1"},
+		{"id":"Base/Life Mind Map.md","width":500,"height":500,"x":1000,"y":0,"type":"file","file":"Base/Life Mind Map.md"},
+		{"id":"Base/Магистратура в Германии.md","width":500,"height":500,"x":1000,"y":600,"type":"file","file":"Base/Магистратура в Германии.md"},
+		{"id":"Base/Стажировка за границей.md","width":500,"height":500,"x":1000,"y":1200,"type":"file","file":"Base/Стажировка за границей.md"}
+	],
+	"edges":[
+		{"id":"Base/00Life Guides.md-Base/Life Mind Map.md","fromSide":"right","toSide":"left","fromNode":"Base/00Life Guides.md","toNode":"Base/Life Mind Map.md"},
+		{"id":"Base/00Life Guides.md-Base/Магистратура в Германии.md","fromSide":"right","toSide":"left","fromNode":"Base/00Life Guides.md","toNode":"Base/Магистратура в Германии.md"},
+		{"id":"Base/00Life Guides.md-Base/Стажировка за границей.md","fromSide":"right","toSide":"left","fromNode":"Base/00Life Guides.md","toNode":"Base/Стажировка за границей.md"}
+	]
+}

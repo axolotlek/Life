@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"b758170e25fd02da","x":-460,"y":-300,"width":380,"height":300,"type":"file","file":"Base/МПГУ Индивидуальный учебный план.canvas"},
+		{"id":"285e2074ddd72c4f","x":-395,"y":-360,"width":250,"height":60,"type":"text","text":"Учёба"},
+		{"id":"bd231b118b049f47","x":-40,"y":-660,"width":199,"height":60,"type":"text","text":"Ориентиры"},
+		{"id":"05d6de1f2b146124","x":284,"y":-661,"width":196,"height":60,"type":"text","text":"Денежные"},
+		{"id":"896cc7c3b127438b","x":560,"y":-831,"width":460,"height":551,"type":"link","url":"https://docs.google.com/spreadsheets/d/1wQpzMsygdsrasEzHba2GEDFEoP5Db_mmiNPEcaHaKns/edit#gid=0"}
+	],
+	"edges":[
+		{"id":"15fbeaa245455ba9","fromNode":"bd231b118b049f47","fromSide":"right","toNode":"05d6de1f2b146124","toSide":"left"},
+		{"id":"99c6e68272425b9e","fromNode":"05d6de1f2b146124","fromSide":"right","toNode":"896cc7c3b127438b","toSide":"left"}
+	]
+}

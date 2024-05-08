@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"bd12d8a8ef6dafd7","x":-59,"y":-122,"width":179,"height":60,"type":"text","text":"Plan Obschiey"},
+		{"id":"7643b5608dcbfa58","x":-200,"y":80,"width":250,"height":60,"type":"text","text":"Money"}
+	],
+	"edges":[
+		{"id":"bb77b0ae6cf38a85","fromNode":"bd12d8a8ef6dafd7","fromSide":"bottom","toNode":"7643b5608dcbfa58","toSide":"top"}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"d28c474602818e86","type":"file","file":"Knowledge/Литература.md","x":-991,"y":338,"width":391,"height":962},
+		{"id":"fdae75e61894ac2f","type":"text","text":"## Цель","x":20,"y":-199,"width":140,"height":50},
+		{"id":"2ec045b24096c931","type":"text","text":"# Хрущ","x":-400,"y":-199,"width":250,"height":60},
+		{"id":"6048ab9e9b5f85f8","type":"text","text":"## Ценности, образ жизни и планирование/целеполагание","x":-610,"y":-77,"width":670,"height":58},
+		{"id":"f1ac89af16ce220b","type":"text","text":"### Здоровье","x":-185,"y":160,"width":166,"height":60},
+		{"id":"d454bff05a86736d","type":"text","text":"### Личные взаимоотношения","x":90,"y":160,"width":344,"height":60},
+		{"id":"06e4b4a2486ac400","type":"text","text":"### Сфера Money","x":-1712,"y":160,"width":217,"height":60},
+		{"id":"0324bb5c88a4fad5","type":"file","file":"Knowledge/Отношение к кредитам.md","x":-2240,"y":360,"width":443,"height":1022},
+		{"id":"909293c05383674c","type":"file","file":"Knowledge/Работа.md","x":-1803,"y":360,"width":400,"height":1260},
+		{"id":"c5039773cbfb926f","type":"file","file":"Knowledge/Траты.md","x":-1408,"y":360,"width":400,"height":1060},
+		{"id":"7f0b4ab6b934855a","type":"text","text":"### Развитие","x":-650,"y":160,"width":250,"height":60},
+		{"id":"c06370cdc7e82655","x":-525,"y":286,"width":400,"height":394,"type":"file","file":"Knowledge/Режим сна.md"},
+		{"id":"0f55a25a4dce5a66","x":776,"y":54,"width":232,"height":60,"type":"text","text":"Создание коммуны"},
+		{"id":"7bedea18717341e0","x":1152,"y":66,"width":133,"height":60,"type":"text","text":"Roadmap"}
+	],
+	"edges":[
+		{"id":"9499906bb51d72e2","fromNode":"2ec045b24096c931","fromSide":"right","toNode":"fdae75e61894ac2f","toSide":"left"},
+		{"id":"36f726913414e884","fromNode":"2ec045b24096c931","fromSide":"bottom","toNode":"6048ab9e9b5f85f8","toSide":"top"},
+		{"id":"eaf8ee535fa20de8","fromNode":"6048ab9e9b5f85f8","fromSide":"bottom","toNode":"06e4b4a2486ac400","toSide":"top"},
+		{"id":"96c3a45cf8cc9bb3","fromNode":"6048ab9e9b5f85f8","fromSide":"bottom","toNode":"f1ac89af16ce220b","toSide":"top"},
+		{"id":"bbc8bdcd0d178dfc","fromNode":"6048ab9e9b5f85f8","fromSide":"bottom","toNode":"d454bff05a86736d","toSide":"top"},
+		{"id":"75c5fff566bbc021","fromNode":"6048ab9e9b5f85f8","fromSide":"bottom","toNode":"7f0b4ab6b934855a","toSide":"top"},
+		{"id":"44fb94722a3d6298","fromNode":"06e4b4a2486ac400","fromSide":"bottom","toNode":"0324bb5c88a4fad5","toSide":"top"},
+		{"id":"a3f22cabb63d229c","fromNode":"06e4b4a2486ac400","fromSide":"bottom","toNode":"909293c05383674c","toSide":"top"},
+		{"id":"032985822625cd9a","fromNode":"06e4b4a2486ac400","fromSide":"bottom","toNode":"c5039773cbfb926f","toSide":"top"},
+		{"id":"150d2609fe126a04","fromNode":"7f0b4ab6b934855a","fromSide":"bottom","toNode":"d28c474602818e86","toSide":"top"},
+		{"id":"5541838b6e5332d2","fromNode":"f1ac89af16ce220b","fromSide":"bottom","toNode":"c06370cdc7e82655","toSide":"top"},
+		{"id":"e473fcf8cf5f86d7","fromNode":"fdae75e61894ac2f","fromSide":"right","toNode":"0f55a25a4dce5a66","toSide":"left"},
+		{"id":"b0bfc43efd4cf885","fromNode":"0f55a25a4dce5a66","fromSide":"right","toNode":"7bedea18717341e0","toSide":"left"}
+	]
+}

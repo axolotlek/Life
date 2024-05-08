@@ -1,0 +1,43 @@
+{
+	"nodes":[
+		{"id":"5b364168a5728abf","type":"text","text":"Куда?","x":-101,"y":-158,"width":121,"height":60},
+		{"id":"9e742363f3803a21","type":"text","text":"Другие коммуны в МСК","x":82,"y":-317,"width":250,"height":60},
+		{"id":"fc84bb0b8050a0bb","type":"text","text":"СПб","x":82,"y":60,"width":98,"height":50},
+		{"id":"3abfc4896ecdc3f6","type":"text","text":"Фасадовская тусовка","x":436,"y":-410,"width":250,"height":60},
+		{"id":"ade5f850d2258e12","type":"text","text":"- [ ] Добавить коммун в родмап","x":82,"y":-158,"width":318,"height":60},
+		{"id":"a09c0f965a570e8a","type":"text","text":"Съём жилья","x":48,"y":260,"width":166,"height":50},
+		{"id":"0362fa8843b2b2ff","type":"text","text":"Коммуны","x":262,"y":56,"width":138,"height":60},
+		{"id":"98c88c8633720da3","type":"text","text":"ДУ","x":436,"y":-501,"width":84,"height":60},
+		{"id":"f745e9b9fbf2aaff","type":"text","text":"Закрытая коммуна на Курской","x":436,"y":-317,"width":304,"height":60},
+		{"id":"b278d9776c9a0f83","type":"text","text":"Плот","x":800,"y":-471,"width":140,"height":60},
+		{"id":"e3f072b79137b820","type":"text","text":"Землянка\n","x":800,"y":-351,"width":140,"height":60},
+		{"id":"523dc06a21bf4d7d","type":"text","text":"1к/студия","x":-82,"y":394,"width":142,"height":60},
+		{"id":"2f0c4586a4b0a4bc","type":"text","text":"Маяк\n[Telegram: Contact @Mayak\\_Apraksin](https://t.me/Mayak_Apraksin)","x":510,"y":60,"width":354,"height":68},
+		{"id":"0b7b559beb3951b2","type":"text","text":"Крона\n[Telegram: Contact @krona\\_comm](https://t.me/krona_comm)","x":510,"y":128,"width":330,"height":83},
+		{"id":"c10a5a6c3c4e25cd","type":"text","text":"Увы\n[Telegram: Contact @yv\\_bl](https://t.me/yv_bl)","x":510,"y":233,"width":262,"height":60},
+		{"id":"ad79d3e34c46a594","type":"text","text":"[Триглинки](https://t.me/triglinki)[Telegram: Contact @triglinki](https://t.me/triglinki)","x":485,"y":380,"width":250,"height":60},
+		{"id":"9931981c060d3222","type":"file","file":"Sources/Pasted image 20240206193320.png","x":200,"y":620,"width":400,"height":349},
+		{"id":"ab44151628261e94","type":"text","text":"Как жить вместе?\n[Как жить вместе? | VK](https://vk.com/kak_zhit_vmeste)","x":522,"y":-98,"width":250,"height":88},
+		{"id":"b7a0ccfd73ad35b2","type":"text","text":"ДУ СПб\n[Telegram: Contact @atuskandal](https://t.me/atuskandal)","x":522,"y":-198,"width":366,"height":80}
+	],
+	"edges":[
+		{"id":"a25f78c892dc2387","fromNode":"5b364168a5728abf","fromSide":"right","toNode":"9e742363f3803a21","toSide":"left"},
+		{"id":"8b03269357d8a0f2","fromNode":"5b364168a5728abf","fromSide":"right","toNode":"fc84bb0b8050a0bb","toSide":"left"},
+		{"id":"7d389e997373d647","fromNode":"9e742363f3803a21","fromSide":"right","toNode":"3abfc4896ecdc3f6","toSide":"left"},
+		{"id":"cda97b3d55a17818","fromNode":"3abfc4896ecdc3f6","fromSide":"right","toNode":"b278d9776c9a0f83","toSide":"left"},
+		{"id":"4e14df16c5dd729c","fromNode":"3abfc4896ecdc3f6","fromSide":"right","toNode":"e3f072b79137b820","toSide":"left"},
+		{"id":"000c2db3c49c3181","fromNode":"9e742363f3803a21","fromSide":"right","toNode":"f745e9b9fbf2aaff","toSide":"left"},
+		{"id":"fa2c6c809895876f","fromNode":"fc84bb0b8050a0bb","fromSide":"bottom","toNode":"a09c0f965a570e8a","toSide":"top"},
+		{"id":"2045665e63c738fb","fromNode":"9e742363f3803a21","fromSide":"bottom","toNode":"ade5f850d2258e12","toSide":"top"},
+		{"id":"94825ca316ebd9cd","fromNode":"fc84bb0b8050a0bb","fromSide":"top","toNode":"ade5f850d2258e12","toSide":"bottom"},
+		{"id":"d594128ce67194fb","fromNode":"fc84bb0b8050a0bb","fromSide":"right","toNode":"0362fa8843b2b2ff","toSide":"left"},
+		{"id":"9e42bdad28751fb9","fromNode":"0362fa8843b2b2ff","fromSide":"right","toNode":"b7a0ccfd73ad35b2","toSide":"left"},
+		{"id":"76d7ed5b6608b6f5","fromNode":"9e742363f3803a21","fromSide":"right","toNode":"98c88c8633720da3","toSide":"left"},
+		{"id":"4376cb367c154b08","fromNode":"a09c0f965a570e8a","fromSide":"bottom","toNode":"523dc06a21bf4d7d","toSide":"top"},
+		{"id":"6f9628ca4b01f8c8","fromNode":"0362fa8843b2b2ff","fromSide":"right","toNode":"2f0c4586a4b0a4bc","toSide":"left"},
+		{"id":"959cd1f6a9993b50","fromNode":"0362fa8843b2b2ff","fromSide":"right","toNode":"0b7b559beb3951b2","toSide":"left"},
+		{"id":"fdae127376d13d69","fromNode":"0362fa8843b2b2ff","fromSide":"right","toNode":"c10a5a6c3c4e25cd","toSide":"left"},
+		{"id":"a8e5d7af66e756c2","fromNode":"0362fa8843b2b2ff","fromSide":"right","toNode":"ab44151628261e94","toSide":"left"},
+		{"id":"b0e42e55743e05b1","fromNode":"0362fa8843b2b2ff","fromSide":"right","toNode":"ad79d3e34c46a594","toSide":"left"}
+	]
+}

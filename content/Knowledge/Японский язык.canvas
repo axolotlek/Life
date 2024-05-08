@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"1cc5f5fba42a338d","x":-350,"y":-299,"width":534,"height":805,"type":"link","url":"https://www.reddit.com/r/languagelearning/comments/vlw3jy/reflecting_on_3000_hours_of_learning_japanese_my/"},
+		{"id":"348570ec4a4ed14e","x":603,"y":-237,"width":537,"height":557,"type":"link","url":"https://learnjapanese.moe/guide/"},
+		{"id":"08b9189ba1d760e8","x":1276,"y":-277,"width":678,"height":645,"type":"file","file":"Sources/Pasted image 20230220220007.png"},
+		{"id":"95128f878bf2d58d","x":140,"y":-1460,"width":360,"height":164,"type":"text","text":"After around 5-6 months since beginning: Begin reading easier light novels and manga"},
+		{"id":"8e333ba611de5ef4","x":676,"y":-1474,"width":392,"height":243,"type":"text","text":"After around 12-18 months since beginning: Practice output through monologuing, shadowing and focused shadowing; slowly begin to introduce conversation practice with a native speaker"},
+		{"id":"dad4c6e5a3f5e6a0","x":1212,"y":-1449,"width":440,"height":192,"type":"text","text":"When satisfied with ability: Stop active study and just keep on watching/reading Japanese content while looking up as many unfamiliar words and grammar as wished\n\n"},
+		{"id":"54b8c905bca5fa8a","x":-1820,"y":-1502,"width":250,"height":52,"type":"text","text":"YOU ARE HERE"},
+		{"id":"826e802d2a27fed9","x":-1445,"y":-1530,"width":265,"height":133,"type":"text","text":"Learn Hiragana and Katakana in a week"},
+		{"id":"4d4eab4c4bfacc0d","x":-976,"y":-1640,"width":363,"height":379,"type":"text","text":"Study Tango N5 and N4 Anki deck while learning basic grammar from Cure Dolly/Tae Kim. Start to watch Japanese content. There are a lot of alternatives to this step, as long as one learns 2000-3000 basic words and basic (~N4-N3) grammar, it's fine. Textbooks are also a totally viable option"},
+		{"id":"efc551efe54bb791","x":-416,"y":-1530,"width":274,"height":160,"type":"text","text":"Learn around 15-25 words every day while continually watching Japanese content"},
+		{"id":"c531a856f8dfb82f","x":38,"y":721,"width":954,"height":1004,"type":"link","url":"https://www.reddit.com/r/LearnJapanese/wiki/index/startersguide/"},
+		{"id":"cedba653f5013962","x":1615,"y":823,"width":1084,"height":1994,"type":"link","url":"https://guidetojapanese.org/learn/complete/"},
+		{"id":"131966ea11c0a4aa","x":-1406,"y":3478,"width":400,"height":400,"type":"file","file":"Base/Hiragana and Katakana Differences.md"},
+		{"id":"a10ee17ce4bba385","x":-2197,"y":3605,"width":400,"height":147,"type":"file","file":"Base/Японский язык.md"}
+	],
+	"edges":[
+		{"id":"27bae9ec3005fd3d","fromNode":"826e802d2a27fed9","fromSide":"right","toNode":"4d4eab4c4bfacc0d","toSide":"left"},
+		{"id":"3a6ec2cab6a53c02","fromNode":"4d4eab4c4bfacc0d","fromSide":"right","toNode":"efc551efe54bb791","toSide":"left"},
+		{"id":"df6c5d190c5415dc","fromNode":"efc551efe54bb791","fromSide":"right","toNode":"95128f878bf2d58d","toSide":"left"},
+		{"id":"625a965302fdbf12","fromNode":"95128f878bf2d58d","fromSide":"right","toNode":"8e333ba611de5ef4","toSide":"left"},
+		{"id":"7825bc5114cfdce3","fromNode":"8e333ba611de5ef4","fromSide":"right","toNode":"dad4c6e5a3f5e6a0","toSide":"left"},
+		{"id":"61ea3dadd831a058","fromNode":"54b8c905bca5fa8a","fromSide":"right","toNode":"826e802d2a27fed9","toSide":"left"},
+		{"id":"97e2b7512b86b341","fromNode":"1cc5f5fba42a338d","fromSide":"right","toNode":"348570ec4a4ed14e","toSide":"left"},
+		{"id":"b62780ee2c2b5935","fromNode":"a10ee17ce4bba385","fromSide":"right","toNode":"131966ea11c0a4aa","toSide":"left"}
+	]
+}

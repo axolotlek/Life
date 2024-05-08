@@ -1,0 +1,42 @@
+{
+	"nodes":[
+		{"id":"e8aa96f348101c3d","x":240,"y":80,"width":140,"height":60,"type":"text","text":"# График"},
+		{"id":"0338c50cbaa89737","x":480,"y":-30,"width":136,"height":60,"type":"text","text":"# Работа"},
+		{"id":"bbebc0eb975c57a5","x":668,"y":-160,"width":250,"height":96,"type":"text","text":"## ПН-ПТ\n15-20:30 ВДНХ"},
+		{"id":"7d3914781ebb7e75","x":668,"y":-30,"width":250,"height":120,"type":"text","text":"## СБ-ВС\nРАНДОМ, можно согласовать"},
+		{"id":"965adeff339484a0","x":441,"y":226,"width":107,"height":60,"type":"text","text":"# Сон"},
+		{"id":"ee689edc09ee19b5","x":626,"y":151,"width":250,"height":105,"type":"text","text":"## Подъём\nТочно не позже 13:00 (планирую в 10)\n"},
+		{"id":"8b36b0d2b160d0fd","x":616,"y":286,"width":250,"height":114,"type":"text","text":"## Спать\nС рассчёта 8 часов сна:\n- Засыпаю в 1:30"},
+		{"id":"0756350645969308","x":425,"y":480,"width":138,"height":60,"type":"text","text":"# Деньги"},
+		{"id":"8585d4fb1e6acd5c","x":741,"y":606,"width":173,"height":50,"type":"text","text":"55 000 долг"},
+		{"id":"5197d97fb3105e30","x":789,"y":801,"width":250,"height":60,"type":"text","text":"37650 мой долг"},
+		{"id":"6ee1623a8acf05b7","x":430,"y":662,"width":128,"height":50,"type":"text","text":"## Траты"},
+		{"id":"6d2e190dcd7ec692","x":298,"y":823,"width":196,"height":60,"type":"text","text":"Транспорт 770р"},
+		{"id":"c8e40dcde8143744","x":828,"y":480,"width":250,"height":50,"type":"text","text":"45 000"},
+		{"id":"1321891cf7ef0560","x":914,"y":340,"width":250,"height":60,"type":"text","text":"Погасить до 3 апреля"},
+		{"id":"4d0fcc2e9de2b592","x":1039,"y":596,"width":250,"height":60,"type":"text","text":"17350 долг ксюши мне"},
+		{"id":"0c782b535560da46","x":-76,"y":505,"width":151,"height":50,"type":"text","text":"## Заработок"},
+		{"id":"92ea0bd826dba406","x":-320,"y":651,"width":175,"height":92,"type":"text","text":"$2000\\cdot12 = ~24000$\nдо конца марта"},
+		{"id":"da64dd9ea5171186","x":-110,"y":649,"width":282,"height":94,"type":"text","text":"Большая сумма 8 марта от FlowWow\n~20000 (в идеале)"}
+	],
+	"edges":[
+		{"id":"b6167f03f4425b4c","fromNode":"e8aa96f348101c3d","fromSide":"right","toNode":"0338c50cbaa89737","toSide":"left"},
+		{"id":"0c7734878ca17926","fromNode":"e8aa96f348101c3d","fromSide":"right","toNode":"965adeff339484a0","toSide":"left"},
+		{"id":"49576d3e06f06f88","fromNode":"e8aa96f348101c3d","fromSide":"bottom","toNode":"0756350645969308","toSide":"left"},
+		{"id":"c91321275460aa14","fromNode":"0338c50cbaa89737","fromSide":"right","toNode":"bbebc0eb975c57a5","toSide":"left"},
+		{"id":"241ac3fee2fce593","fromNode":"0338c50cbaa89737","fromSide":"right","toNode":"7d3914781ebb7e75","toSide":"left"},
+		{"id":"f428ffd071f4b016","fromNode":"965adeff339484a0","fromSide":"right","toNode":"ee689edc09ee19b5","toSide":"left"},
+		{"id":"ea029b62adbbc6c0","fromNode":"965adeff339484a0","fromSide":"right","toNode":"8b36b0d2b160d0fd","toSide":"left"},
+		{"id":"f678e995999c186e","fromNode":"0756350645969308","fromSide":"right","toNode":"8585d4fb1e6acd5c","toSide":"left"},
+		{"id":"a28ffc4818e6ab99","fromNode":"8585d4fb1e6acd5c","fromSide":"bottom","toNode":"5197d97fb3105e30","toSide":"top"},
+		{"id":"fe4d42b568c57992","fromNode":"4d0fcc2e9de2b592","fromSide":"bottom","toNode":"5197d97fb3105e30","toSide":"top"},
+		{"id":"d008a58c8e6c2a41","fromNode":"0756350645969308","fromSide":"left","toNode":"0c782b535560da46","toSide":"top"},
+		{"id":"6427625b2f022431","fromNode":"0c782b535560da46","fromSide":"bottom","toNode":"92ea0bd826dba406","toSide":"top"},
+		{"id":"da409044b28c3965","fromNode":"0c782b535560da46","fromSide":"bottom","toNode":"da64dd9ea5171186","toSide":"top"},
+		{"id":"f862c0b1195a0fc3","fromNode":"0756350645969308","fromSide":"bottom","toNode":"6ee1623a8acf05b7","toSide":"top"},
+		{"id":"70ad40b9d62ae8cf","fromNode":"6ee1623a8acf05b7","fromSide":"bottom","toNode":"6d2e190dcd7ec692","toSide":"top"},
+		{"id":"ba5d0566fb8b0c65","fromNode":"8585d4fb1e6acd5c","fromSide":"top","toNode":"c8e40dcde8143744","toSide":"bottom"},
+		{"id":"5d00826760f5efd1","fromNode":"c8e40dcde8143744","fromSide":"top","toNode":"1321891cf7ef0560","toSide":"bottom"},
+		{"id":"81c3910ca6f4c973","fromNode":"8585d4fb1e6acd5c","fromSide":"right","toNode":"4d0fcc2e9de2b592","toSide":"left"}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"2caed1893d7c363a","x":-2173,"y":-887,"width":400,"height":400,"type":"file","file":"Knowledge/Музыкальный ключ.md"},
+		{"id":"599da13ff102fbff","type":"file","file":"Knowledge/Ритм.md","x":-167,"y":-55,"width":400,"height":400},
+		{"id":"11c7c880323402a2","type":"file","file":"Knowledge/Музыкальная теория. Базовые понятия.md","x":-9,"y":-720,"width":213,"height":233},
+		{"id":"645b554195c72368","x":946,"y":-1164,"width":400,"height":124,"type":"file","file":"Knowledge/Секунда.md"},
+		{"id":"f5a013370abc7995","x":400,"y":-940,"width":400,"height":220,"type":"file","file":"Knowledge/Интервал.md"},
+		{"id":"2aca85e779f21704","x":900,"y":-740,"width":400,"height":400,"type":"file","file":"Knowledge/Гармония.md"},
+		{"id":"9c542836fcd365d3","x":-1007,"y":-1234,"width":400,"height":294,"type":"file","file":"Knowledge/Штиль.md"},
+		{"id":"0b4e3ce6bb74a742","x":-960,"y":-682,"width":200,"height":136,"type":"file","file":"Knowledge/Нота.md"},
+		{"id":"bbefeb344e93d83e","x":-1260,"y":-234,"width":400,"height":285,"type":"file","file":"Knowledge/Нотная головка.md"},
+		{"id":"d04ca7937652d992","x":-1560,"y":-834,"width":400,"height":288,"type":"file","file":"Knowledge/Нотный стан.md"},
+		{"id":"87845cac474aa8fb","x":400,"y":-340,"width":400,"height":762,"type":"file","file":"Knowledge/Такт.md"},
+		{"id":"d530c30b51aa5387","x":280,"y":760,"width":640,"height":360,"type":"link","url":"https://youtu.be/5XdaQED0OYY"},
+		{"id":"e5ec23503f9b58b4","x":270,"y":-1180,"width":250,"height":81,"color":"1","type":"text","text":"Почему большая секунда равно одному тону, но тон != секунда?"}
+	],
+	"edges":[
+		{"id":"9187e874fef11784","fromNode":"11c7c880323402a2","fromSide":"bottom","toNode":"599da13ff102fbff","toSide":"top"},
+		{"id":"beecb9eba606b252","fromNode":"11c7c880323402a2","fromSide":"left","toNode":"0b4e3ce6bb74a742","toSide":"right"},
+		{"id":"4370d5070b4a9d81","fromNode":"11c7c880323402a2","fromSide":"bottom","toNode":"87845cac474aa8fb","toSide":"top"},
+		{"id":"0b12c952d6146971","fromNode":"87845cac474aa8fb","fromSide":"bottom","toNode":"d530c30b51aa5387","toSide":"top"},
+		{"id":"ab85b0e3e9ff5530","fromNode":"11c7c880323402a2","fromSide":"right","toNode":"f5a013370abc7995","toSide":"left"},
+		{"id":"4a438ce5376fcb40","fromNode":"f5a013370abc7995","fromSide":"right","toNode":"645b554195c72368","toSide":"left"},
+		{"id":"9ee38b99f7bb2215","fromNode":"11c7c880323402a2","fromSide":"right","toNode":"2aca85e779f21704","toSide":"left"},
+		{"id":"621386e23e9881b9","fromNode":"0b4e3ce6bb74a742","fromSide":"left","toNode":"d04ca7937652d992","toSide":"right"},
+		{"id":"fe3d0cd0c61f45a9","fromNode":"0b4e3ce6bb74a742","fromSide":"top","toNode":"9c542836fcd365d3","toSide":"bottom"},
+		{"id":"20a7bf4534201c07","fromNode":"0b4e3ce6bb74a742","fromSide":"bottom","toNode":"bbefeb344e93d83e","toSide":"top"},
+		{"id":"920a850c12fd007b","fromNode":"f5a013370abc7995","fromSide":"top","toNode":"e5ec23503f9b58b4","toSide":"bottom"},
+		{"id":"7ff13b3b7860ff2d","fromNode":"d04ca7937652d992","fromSide":"left","toNode":"2caed1893d7c363a","toSide":"right"}
+	]
+}

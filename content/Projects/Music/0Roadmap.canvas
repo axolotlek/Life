@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"cf82815a1cb680c0","type":"text","text":"Философская литература","x":-18,"y":240,"width":180,"height":60},
+		{"id":"bed085bc663729bd","type":"text","text":"Лирика","x":9,"y":32,"width":126,"height":60},
+		{"id":"0052f2e063f15cde","type":"text","text":"Изучить теорию музыки","x":162,"y":-179,"width":250,"height":60},
+		{"id":"98d337733ba43275","type":"text","text":"Изучение вокала","x":162,"y":-119,"width":250,"height":60},
+		{"id":"7945aa628b6fc868","type":"text","text":"Правила стихосложения","x":287,"y":2,"width":186,"height":61},
+		{"id":"80ef35fe880b935f","type":"text","text":"Фикшн, стихи","x":201,"y":210,"width":179,"height":60},
+		{"id":"458b6fd74af22fa0","type":"text","text":"Софт","x":-223,"y":240,"width":104,"height":60},
+		{"id":"6a155a2df80c4526","type":"text","text":"[[Projects/Music/_Index|Project Music]]","x":-460,"y":-86,"width":177,"height":60,"color":"1"},
+		{"id":"47f5b2947cd11c40","x":500,"y":-181,"width":250,"height":65,"type":"text","text":"[OPEN MUSIC THEORY – Simple Book Publishing](https://viva.pressbooks.pub/openmusictheory/)\n\n[[Music Theory]]"}
+	],
+	"edges":[
+		{"id":"c7f86a626b328caa","fromNode":"6a155a2df80c4526","fromSide":"right","toNode":"0052f2e063f15cde","toSide":"left"},
+		{"id":"f20ee49ee9afbb2f","fromNode":"6a155a2df80c4526","fromSide":"right","toNode":"98d337733ba43275","toSide":"left"},
+		{"id":"eb1bb4fb2b4c3f2a","fromNode":"6a155a2df80c4526","fromSide":"right","toNode":"bed085bc663729bd","toSide":"left"},
+		{"id":"d04fa54e13755260","fromNode":"6a155a2df80c4526","fromSide":"right","toNode":"458b6fd74af22fa0","toSide":"top"},
+		{"id":"7e32be5cde1ad86e","fromNode":"bed085bc663729bd","fromSide":"bottom","toNode":"cf82815a1cb680c0","toSide":"top"},
+		{"id":"96edd4a4faab3217","fromNode":"bed085bc663729bd","fromSide":"right","toNode":"7945aa628b6fc868","toSide":"left"},
+		{"id":"2a5b0f042389d68d","fromNode":"bed085bc663729bd","fromSide":"bottom","toNode":"80ef35fe880b935f","toSide":"top"},
+		{"id":"af0862072ac0795d","fromNode":"0052f2e063f15cde","fromSide":"right","toNode":"47f5b2947cd11c40","toSide":"left"}
+	]
+}

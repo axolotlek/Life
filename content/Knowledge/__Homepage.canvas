@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"5d45031ecb4ee746","type":"file","file":"Base/Studying Lifeguide.md","x":3012,"y":-612,"width":762,"height":1059},
+		{"id":"732101394293e222","type":"text","text":"# Daily notes\n\n## All\n\n```dataview\ntable\nfrom \"Daily\"\n```","x":-1035,"y":-562,"width":287,"height":384},
+		{"id":"ce6703aa0e5377a1","type":"file","file":"Base/Education Possibilities.canvas","x":2440,"y":-317,"width":400,"height":400},
+		{"id":"700655eba0982139","type":"text","text":"Studying Reminders","x":853,"y":-894,"width":247,"height":50},
+		{"id":"9af567a9a3ce45af","type":"file","file":"Base/Visual Learning.md","x":776,"y":-1366,"width":400,"height":184},
+		{"id":"95852fe0441d2384","type":"file","file":"Base/Goals.md","x":625,"y":-370,"width":704,"height":915,"color":"4"},
+		{"id":"859e24f313d6741e","type":"text","text":"> [!INFO]\n> I you bored with your life its a good idea to refactor your goals and translate them into tasks!","x":624,"y":-585,"width":704,"height":215,"color":"4"},
+		{"id":"6aaa65a51d080d57","type":"file","file":"Base/Походы.md","x":1565,"y":145,"width":400,"height":400},
+		{"id":"701096ddb5e48484","type":"text","text":"```dataviewjs\nthis.container.style.minHeight = \"1000px\";\nconst { renderCalendar } = app.plugins.plugins[\"obsidian-full-calendar\"];\nlet calendar = renderCalendar(this.container, [[{start: new Date(), id: \"id\", title: \"Now and for an hour\"}]]);\ncalendar.render()\n```\n","x":-669,"y":-1619,"width":765,"height":874},
+		{"id":"10586ea4ec0cf897","type":"file","file":"Base/_Index.md","x":-718,"y":834,"width":860,"height":993},
+		{"id":"0c185bf209b7abdf","type":"text","text":"# Tasks\n\n## Today\n```dataview\nTASK\nFROM \"Daily\"\nWHERE file.day = date(today)\n```\n\n## Next Day\n```dataview\nTASK\nFROM \"Daily\"\nWHERE file.day = date(tomorrow)\n```","x":-673,"y":-620,"width":769,"height":857},
+		{"id":"e20b665d8de01ad2","x":1407,"y":1272,"width":250,"height":60,"type":"text","text":"- [ ] dsasdas"}
+	],
+	"edges":[
+		{"id":"ac757932b1001d5d","fromNode":"700655eba0982139","fromSide":"top","toNode":"9af567a9a3ce45af","toSide":"bottom"},
+		{"id":"6759fea239f2161e","fromNode":"95852fe0441d2384","fromSide":"right","toNode":"6aaa65a51d080d57","toSide":"left"}
+	]
+}
