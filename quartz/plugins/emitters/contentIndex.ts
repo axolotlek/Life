@@ -107,7 +107,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
           graph.addEdge(sourcePath, joinSegments(ctx.argv.output, "sitemap.xml") as FilePath)
         }
         if (opts?.enableRSS) {
-          graph.addEdge(sourcePath, joinSegments(ctx.argv.output, "index.xml") as FilePath)
+          graph.addEdge(sourcePath, joinSegments(ctx.argv.output, "Index.xml") as FilePath)
         }
       }
 
@@ -151,7 +151,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
           await write({
             ctx,
             content: generateRSSFeed(cfg, linkIndex, opts.rssLimit),
-            slug: "index" as FullSlug,
+            slug: "Index" as FullSlug,
             ext: ".xml",
           }),
         )
@@ -160,8 +160,8 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       const fp = joinSegments("static", "contentIndex") as FullSlug
       const simplifiedIndex = Object.fromEntries(
         Array.from(linkIndex).map(([slug, content]) => {
-          // remove description and from content index as nothing downstream
-          // actually uses it. we only keep it in the index as we need it
+          // remove description and from content Index as nothing downstream
+          // actually uses it. we only keep it in the Index as we need it
           // for the RSS feed
           delete content.description
           delete content.date

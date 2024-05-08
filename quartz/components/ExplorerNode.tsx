@@ -66,9 +66,9 @@ export class FileNode {
     // base case, insert here
     if (fileData.path.length === 1) {
       if (nextSegment === "") {
-        // index case (we are the root and we just found index.md), set our data appropriately
+        // Index case (we are the root and we just found Index.md), set our data appropriately
         const title = fileData.file.frontmatter?.title
-        if (title && title !== "index") {
+        if (title && title !== "Index") {
           this.displayName = title
         }
       } else {
