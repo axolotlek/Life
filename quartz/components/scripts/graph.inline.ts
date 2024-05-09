@@ -1,4 +1,4 @@
-import type { ContentDetails, ContentIndex } from "../../plugins/emitters/contentIndex"
+import type { ContentDetails, Contentindex } from "../../plugins/emitters/contentindex"
 import * as d3 from "d3"
 import { registerEscapeHandler, removeAllChildren } from "./util"
 import { FullSlug, SimpleSlug, getFullSlug, resolveRelative, simplifySlug } from "../../util/path"
@@ -316,7 +316,7 @@ function renderGlobalGraph() {
   const sidebar = container?.closest(".sidebar") as HTMLElement
   container?.classList.add("active")
   if (sidebar) {
-    sidebar.style.zIndex = "1"
+    sidebar.style.zindex = "1"
   }
 
   renderGraph("global-graph-container", slug)
@@ -325,7 +325,7 @@ function renderGlobalGraph() {
     container?.classList.remove("active")
     const graph = document.getElementById("global-graph-container")
     if (sidebar) {
-      sidebar.style.zIndex = "unset"
+      sidebar.style.zindex = "unset"
     }
     if (!graph) return
     removeAllChildren(graph)

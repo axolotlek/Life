@@ -73,7 +73,7 @@ export default {
     },
     tagContent: {
       tag: "Etiqueta",
-      tagIndex: "Índice de Etiquetas",
+      tagindex: "Índice de Etiquetas",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 artículo con esta etiqueta." : `${count} artículos con esta etiqueta.`,
       showingFirst: ({ count }) => `Mostrando las primeras ${count} etiquetas.`,

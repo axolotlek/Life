@@ -73,7 +73,7 @@ export default {
     },
     tagContent: {
       tag: "Tag",
-      tagIndex: "Tag-Übersicht",
+      tagindex: "Tag-Übersicht",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 Datei mit diesem Tag." : `${count} Dateien mit diesem Tag.`,
       showingFirst: ({ count }) => `Die ersten ${count} Tags werden angezeigt.`,

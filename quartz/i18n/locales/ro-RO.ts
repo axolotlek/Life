@@ -74,7 +74,7 @@ export default {
     },
     tagContent: {
       tag: "Etichetă",
-      tagIndex: "Indexul etichetelor",
+      tagindex: "indexul etichetelor",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 articol cu această etichetă." : `${count} articole cu această etichetă.`,
       showingFirst: ({ count }) => `Se afișează primele ${count} etichete.`,

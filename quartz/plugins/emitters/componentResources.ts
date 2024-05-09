@@ -237,10 +237,10 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
       promises.push(
         write({
           ctx,
-          slug: "Index" as FullSlug,
+          slug: "index" as FullSlug,
           ext: ".css",
           content: transform({
-            filename: "Index.css",
+            filename: "index.css",
             code: Buffer.from(stylesheet),
             minify: true,
             targets: {

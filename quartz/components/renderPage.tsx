@@ -24,11 +24,11 @@ export function pageResources(
   baseDir: FullSlug | RelativeURL,
   staticResources: StaticResources,
 ): StaticResources {
-  const contentIndexPath = joinSegments(baseDir, "static/contentIndex.json")
-  const contentIndexScript = `const fetchData = fetch("${contentIndexPath}").then(data => data.json())`
+  const contentindexPath = joinSegments(baseDir, "static/contentindex.json")
+  const contentindexScript = `const fetchData = fetch("${contentindexPath}").then(data => data.json())`
 
   return {
-    css: [joinSegments(baseDir, "Index.css"), ...staticResources.css],
+    css: [joinSegments(baseDir, "index.css"), ...staticResources.css],
     js: [
       {
         src: joinSegments(baseDir, "prescript.js"),
@@ -39,7 +39,7 @@ export function pageResources(
         loadTime: "beforeDOMReady",
         contentType: "inline",
         spaPreserve: true,
-        script: contentIndexScript,
+        script: contentindexScript,
       },
       ...staticResources.js,
       {
@@ -64,7 +64,7 @@ export function renderPage(
   const root = clone(componentData.tree) as Root
 
   // process transcludes in componentData
-  visit(root, "element", (node, _Index, _parent) => {
+  visit(root, "element", (node, _index, _parent) => {
     if (node.tagName === "blockquote") {
       const classNames = (node.properties?.className ?? []) as string[]
       if (classNames.includes("transclude")) {
