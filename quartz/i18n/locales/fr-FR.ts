@@ -73,7 +73,7 @@ export default {
     },
     tagContent: {
       tag: "Étiquette",
-      tagindex: "index des étiquettes",
+      tagIndex: "Index des étiquettes",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 élément avec cette étiquette." : `${count} éléments avec cette étiquette.`,
       showingFirst: ({ count }) => `Affichage des premières ${count} étiquettes.`,

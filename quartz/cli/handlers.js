@@ -152,7 +152,7 @@ export async function handleCreate(argv) {
     }
   } else if (setupStrategy === "new") {
     await fs.promises.writeFile(
-      path.join(contentFolder, "index.md"),
+      path.join(contentFolder, "Index.md"),
       `---
 title: Welcome to Quartz
 ---
@@ -373,9 +373,9 @@ export async function handleBuild(argv) {
       // handle redirects
       if (fp.endsWith("/")) {
         // /trailing/
-        // does /trailing/index.html exist? if so, serve it
-        const indexFp = path.posix.join(fp, "index.html")
-        if (fs.existsSync(path.posix.join(argv.output, indexFp))) {
+        // does /trailing/Index.html exist? if so, serve it
+        const IndexFp = path.posix.join(fp, "Index.html")
+        if (fs.existsSync(path.posix.join(argv.output, IndexFp))) {
           req.url = fp
           return serve()
         }
@@ -400,9 +400,9 @@ export async function handleBuild(argv) {
           return serve()
         }
 
-        // does /regular/index.html exist? if so, redirect to /regular/
-        let indexFp = path.posix.join(fp, "index.html")
-        if (fs.existsSync(path.posix.join(argv.output, indexFp))) {
+        // does /regular/Index.html exist? if so, redirect to /regular/
+        let IndexFp = path.posix.join(fp, "Index.html")
+        if (fs.existsSync(path.posix.join(argv.output, IndexFp))) {
           return redirect(fp + "/")
         }
       }

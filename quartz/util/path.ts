@@ -18,7 +18,7 @@ export function isFilePath(s: string): s is FilePath {
   return validStart && _hasFileExtension(s)
 }
 
-/** Cannot be relative and may not have leading or trailing slashes. It can have `index` as it's last segment. Use this wherever possible is it's the most 'general' interpretation of a slug. */
+/** Cannot be relative and may not have leading or trailing slashes. It can have `Index` as it's last segment. Use this wherever possible is it's the most 'general' interpretation of a slug. */
 export type FullSlug = SlugLike<"full">
 export function isFullSlug(s: string): s is FullSlug {
   const validStart = !(s.startsWith(".") || s.startsWith("/"))
@@ -26,11 +26,11 @@ export function isFullSlug(s: string): s is FullSlug {
   return validStart && validEnding && !containsForbiddenCharacters(s)
 }
 
-/** Shouldn't be a relative path and shouldn't have `/index` as an ending or a file extension. It _can_ however have a trailing slash to indicate a folder path. */
+/** Shouldn't be a relative path and shouldn't have `/Index` as an ending or a file extension. It _can_ however have a trailing slash to indicate a folder path. */
 export type SimpleSlug = SlugLike<"simple">
 export function isSimpleSlug(s: string): s is SimpleSlug {
   const validStart = !(s.startsWith(".") || (s.length > 1 && s.startsWith("/")))
-  const validEnding = !endsWith(s, "index")
+  const validEnding = !endsWith(s, "Index")
   return validStart && !containsForbiddenCharacters(s) && validEnding && !_hasFileExtension(s)
 }
 
@@ -38,7 +38,7 @@ export function isSimpleSlug(s: string): s is SimpleSlug {
 export type RelativeURL = SlugLike<"relative">
 export function isRelativeURL(s: string): s is RelativeURL {
   const validStart = /^\.{1,2}/.test(s)
-  const validEnding = !endsWith(s, "index")
+  const validEnding = !endsWith(s, "Index")
   return validStart && validEnding && ![".md", ".html"].includes(_getFileExtension(s) ?? "")
 }
 
@@ -72,16 +72,16 @@ export function slugifyFilePath(fp: FilePath, excludeExt?: boolean): FullSlug {
 
   let slug = sluggify(withoutFileExt)
 
-  // treat _index as index
-  if (endsWith(slug, "_index")) {
-    slug = slug.replace(/_index$/, "index")
+  // treat _Index as Index
+  if (endsWith(slug, "_Index")) {
+    slug = slug.replace(/_Index$/, "Index")
   }
 
   return (slug + ext) as FullSlug
 }
 
 export function simplifySlug(fp: FullSlug): SimpleSlug {
-  const res = stripSlashes(trimSuffix(fp, "index"), true)
+  const res = stripSlashes(trimSuffix(fp, "Index"), true)
   return (res.length === 0 ? "/" : res) as SimpleSlug
 }
 
@@ -93,7 +93,7 @@ export function transformInternalLink(link: string): RelativeURL {
   let prefix = segments.filter(isRelativeSegment).join("/")
   let fp = segments.filter((seg) => !isRelativeSegment(seg) && seg !== "").join("/")
 
-  // manually add ext here as we want to not strip 'index' if it has an extension
+  // manually add ext here as we want to not strip 'Index' if it has an extension
   const simpleSlug = simplifySlug(slugifyFilePath(fp as FilePath))
   const joined = joinSegments(stripSlashes(prefix), stripSlashes(simpleSlug))
   const trail = folderPath ? "/" : ""
@@ -237,9 +237,9 @@ export function transformLink(src: FullSlug, target: string, opts: TransformOpti
 function isFolderPath(fplike: string): boolean {
   return (
     fplike.endsWith("/") ||
-    endsWith(fplike, "index") ||
-    endsWith(fplike, "index.md") ||
-    endsWith(fplike, "index.html")
+    endsWith(fplike, "Index") ||
+    endsWith(fplike, "Index.md") ||
+    endsWith(fplike, "Index.html")
   )
 }
 

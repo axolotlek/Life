@@ -40,7 +40,7 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpt
     },
     async getDependencyGraph(_ctx, content, _resources) {
       // Example graph:
-      // nested/file.md --> nested/index.html
+      // nested/file.md --> nested/Index.html
       // nested/file2.md ------^
       const graph = new DepGraph<FilePath>()
 
@@ -48,7 +48,7 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpt
         const slug = vfile.data.slug
         const folderName = path.dirname(slug ?? "") as SimpleSlug
         if (slug && folderName !== "." && folderName !== "tags") {
-          graph.addEdge(vfile.data.filePath!, joinSegments(folderName, "index.html") as FilePath)
+          graph.addEdge(vfile.data.filePath!, joinSegments(folderName, "Index.html") as FilePath)
         }
       })
 
@@ -74,7 +74,7 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpt
         [...folders].map((folder) => [
           folder,
           defaultProcessedContent({
-            slug: joinSegments(folder, "index") as FullSlug,
+            slug: joinSegments(folder, "Index") as FullSlug,
             frontmatter: {
               title: `${i18n(cfg.locale).pages.folderContent.folder}: ${folder}`,
               tags: [],
@@ -91,7 +91,7 @@ export const FolderPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpt
       }
 
       for (const folder of folders) {
-        const slug = joinSegments(folder, "index") as FullSlug
+        const slug = joinSegments(folder, "Index") as FullSlug
         const externalResources = pageResources(pathToRoot(slug), resources)
         const [tree, file] = folderDescriptions[folder]
         const componentData: QuartzComponentProps = {

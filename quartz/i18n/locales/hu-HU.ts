@@ -72,7 +72,7 @@ export default {
     },
     tagContent: {
       tag: "Címke",
-      tagindex: "Címke index",
+      tagIndex: "Címke Index",
       itemsUnderTag: ({ count }) => `${count} elem található ezzel a címkével.`,
       showingFirst: ({ count }) => `Első ${count} címke megjelenítve.`,
       totalTags: ({ count }) => `Összesen ${count} címke található.`,

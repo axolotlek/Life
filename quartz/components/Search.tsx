@@ -23,7 +23,7 @@ export default ((userOpts?: Partial<SearchOptions>) => {
           <p>{i18n(cfg.locale).components.search.title}</p>
           <div></div>
           <svg
-            tabindex={0}
+            tabIndex={0}
             aria-labelledby="title desc"
             role="img"
             xmlns="http://www.w3.org/2000/svg"

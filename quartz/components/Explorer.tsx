@@ -56,7 +56,7 @@ export default ((userOpts?: Partial<Options>) => {
 
     // Execute all functions (sort, filter, map) that were provided (if none were provided, only default "sort" is applied)
     if (opts.order) {
-      // Order is important, use loop with index instead of order.map()
+      // Order is important, use loop with Index instead of order.map()
       for (let i = 0; i < opts.order.length; i++) {
         const functionName = opts.order[i]
         if (functionName === "map") {
