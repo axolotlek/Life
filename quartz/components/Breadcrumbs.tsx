@@ -23,7 +23,7 @@ interface BreadcrumbOptions {
    */
   resolveFrontmatterTitle: boolean
   /**
-   * Whether to display breadcrumbs on root `Index.md`
+   * Whether to display breadcrumbs on root `index.md`
    */
   hideOnRoot: boolean
   /**
@@ -51,7 +51,7 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
   // Merge options with defaults
   const options: BreadcrumbOptions = { ...defaultOptions, ...opts }
 
-  // computed Index of folder name to its associated file data
+  // computed index of folder name to its associated file data
   let folderIndex: Map<string, QuartzPluginData> | undefined
 
   const Breadcrumbs: QuartzComponent = ({
@@ -60,7 +60,7 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
     displayClass,
   }: QuartzComponentProps) => {
     // Hide crumbs on root if enabled
-    if (options.hideOnRoot && fileData.slug === "Index") {
+    if (options.hideOnRoot && fileData.slug === "index") {
       return <></>
     }
 
@@ -70,10 +70,10 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
 
     if (!folderIndex && options.resolveFrontmatterTitle) {
       folderIndex = new Map()
-      // construct the Index for the first time
+      // construct the index for the first time
       for (const file of allFiles) {
         const folderParts = file.slug?.split("/")
-        if (folderParts?.at(-1) === "Index") {
+        if (folderParts?.at(-1) === "index") {
           folderIndex.set(folderParts.slice(0, -1).join("/"), file)
         }
       }
@@ -95,7 +95,7 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
         const currentFile = folderIndex?.get(slugParts.slice(0, i + 1).join("/"))
         if (currentFile) {
           const title = currentFile.frontmatter!.title
-          if (title !== "Index") {
+          if (title !== "index") {
             curPathSegment = title
           }
         }
@@ -114,7 +114,7 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
       }
 
       // Add current file to crumb (can directly use frontmatter title)
-      if (options.showCurrentPage && slugParts.at(-1) !== "Index") {
+      if (options.showCurrentPage && slugParts.at(-1) !== "index") {
         crumbs.push({
           displayName: fileData.frontmatter!.title,
           path: "",
@@ -124,10 +124,10 @@ export default ((opts?: Partial<BreadcrumbOptions>) => {
 
     return (
       <nav class={classNames(displayClass, "breadcrumb-container")} aria-label="breadcrumbs">
-        {crumbs.map((crumb, Index) => (
+        {crumbs.map((crumb, index) => (
           <div class="breadcrumb-element">
             <a href={crumb.path}>{crumb.displayName}</a>
-            {Index !== crumbs.length - 1 && <p>{` ${options.spacerSymbol} `}</p>}
+            {index !== crumbs.length - 1 && <p>{` ${options.spacerSymbol} `}</p>}
           </div>
         ))}
       </nav>

@@ -25,7 +25,7 @@ export const AliasRedirects: QuartzEmitterPlugin = () => ({
       for (let slug of slugs) {
         // fix any slugs that have trailing slash
         if (slug.endsWith("/")) {
-          slug = joinSegments(slug, "Index") as FullSlug
+          slug = joinSegments(slug, "index") as FullSlug
         }
 
         graph.addEdge(file.data.filePath!, joinSegments(argv.output, slug + ".html") as FilePath)
@@ -51,7 +51,7 @@ export const AliasRedirects: QuartzEmitterPlugin = () => ({
       for (let slug of slugs) {
         // fix any slugs that have trailing slash
         if (slug.endsWith("/")) {
-          slug = joinSegments(slug, "Index") as FullSlug
+          slug = joinSegments(slug, "index") as FullSlug
         }
 
         const redirUrl = resolveRelative(slug, file.data.slug!)
@@ -63,7 +63,7 @@ export const AliasRedirects: QuartzEmitterPlugin = () => ({
             <head>
             <title>${ogSlug}</title>
             <link rel="canonical" href="${redirUrl}">
-            <meta name="robots" content="noIndex">
+            <meta name="robots" content="noindex">
             <meta charset="utf-8">
             <meta http-equiv="refresh" content="0; url=${redirUrl}">
             </head>

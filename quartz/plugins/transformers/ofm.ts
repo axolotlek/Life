@@ -122,7 +122,7 @@ export const tableWikilinkRegex = new RegExp(/(!?\[\[[^\]]*?\]\])/, "g")
 
 const highlightRegex = new RegExp(/==([^=]+)==/, "g")
 const commentRegex = new RegExp(/%%[\s\S]*?%%/, "g")
-// from https://github.com/escwxyz/remark-obsidian-callout/blob/main/src/Index.ts
+// from https://github.com/escwxyz/remark-obsidian-callout/blob/main/src/index.ts
 const calloutRegex = new RegExp(/^\[\!(\w+)\]([+-]?)/)
 const calloutLineRegex = new RegExp(/^> *\[\!\w+\][+-]?.*$/, "gm")
 // (?:^| )              -> non-capturing group, tag should start be separated by a space or be the start of the line
@@ -391,14 +391,14 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
       if (opts.enableVideoEmbed) {
         plugins.push(() => {
           return (tree: Root, _file) => {
-            visit(tree, "image", (node, Index, parent) => {
-              if (parent && Index != undefined && videoExtensionRegex.test(node.url)) {
+            visit(tree, "image", (node, index, parent) => {
+              if (parent && index != undefined && videoExtensionRegex.test(node.url)) {
                 const newNode: Html = {
                   type: "html",
                   value: `<video controls src="${node.url}"></video>`,
                 }
 
-                parent.children.splice(Index, 1, newNode)
+                parent.children.splice(index, 1, newNode)
                 return SKIP
               }
             })
@@ -525,15 +525,15 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
           return (tree: HtmlRoot, file) => {
             file.data.blocks = {}
 
-            visit(tree, "element", (node, Index, parent) => {
+            visit(tree, "element", (node, index, parent) => {
               if (blockTagTypes.has(node.tagName)) {
-                const nextChild = parent?.children.at(Index! + 2) as Element
+                const nextChild = parent?.children.at(index! + 2) as Element
                 if (nextChild && nextChild.tagName === "p") {
                   const text = nextChild.children.at(0) as Literal
                   if (text && text.value && text.type === "text") {
                     const matches = text.value.match(blockReferenceRegex)
                     if (matches && matches.length >= 1) {
-                      parent!.children.splice(Index! + 2, 1)
+                      parent!.children.splice(index! + 2, 1)
                       const block = matches[0].slice(1)
 
                       if (!Object.keys(file.data.blocks!).includes(block)) {
@@ -557,7 +557,7 @@ export const ObsidianFlavoredMarkdown: QuartzTransformerPlugin<Partial<Options> 
                     if (last.value === "") {
                       // this is an inline block ref but the actual block
                       // is the previous element above it
-                      let idx = (Index ?? 1) - 1
+                      let idx = (index ?? 1) - 1
                       while (idx >= 0) {
                         const element = parent?.children.at(idx)
                         if (!element) break

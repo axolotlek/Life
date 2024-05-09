@@ -16,13 +16,13 @@ type SearchType = "basic" | "tags"
 let searchType: SearchType = "basic"
 let currentSearchTerm: string = ""
 const encoder = (str: string) => str.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/)
-let Index = new FlexSearch.Document<Item>({
+let index = new FlexSearch.Document<Item>({
   charset: "latin:extra",
   encode: encoder,
   document: {
     id: "id",
     tag: "tags",
-    Index: [
+    index: [
       {
         field: "title",
         tokenize: "forward",
@@ -123,7 +123,7 @@ function highlightHTML(searchTerm: string, el: HTMLElement) {
       const spanContainer = document.createElement("span")
       let lastIndex = 0
       for (const match of matches) {
-        const matchIndex = nodeText.IndexOf(match, lastIndex)
+        const matchIndex = nodeText.indexOf(match, lastIndex)
         spanContainer.appendChild(document.createTextNode(nodeText.slice(lastIndex, matchIndex)))
         spanContainer.appendChild(createHighlightSpan(match))
         lastIndex = matchIndex + match.length
@@ -399,7 +399,7 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   }
 
   async function onType(e: HTMLElementEventMap["input"]) {
-    if (!searchLayout || !Index) return
+    if (!searchLayout || !index) return
     currentSearchTerm = (e.target as HTMLInputElement).value
     searchLayout.classList.toggle("display-results", currentSearchTerm !== "")
     searchType = currentSearchTerm.startsWith("#") ? "tags" : "basic"
@@ -407,16 +407,16 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     let searchResults: FlexSearch.SimpleDocumentSearchResultSetUnit[]
     if (searchType === "tags") {
       currentSearchTerm = currentSearchTerm.substring(1).trim()
-      const separatorIndex = currentSearchTerm.IndexOf(" ")
+      const separatorIndex = currentSearchTerm.indexOf(" ")
       if (separatorIndex != -1) {
-        // search by title and content Index and then filter by tag (implemented in flexsearch)
+        // search by title and content index and then filter by tag (implemented in flexsearch)
         const tag = currentSearchTerm.substring(0, separatorIndex)
         const query = currentSearchTerm.substring(separatorIndex + 1).trim()
-        searchResults = await Index.searchAsync({
+        searchResults = await index.searchAsync({
           query: query,
           // return at least 10000 documents, so it is enough to filter them by tag (implemented in flexsearch)
           limit: Math.max(numSearchResults, 10000),
-          Index: ["title", "content"],
+          index: ["title", "content"],
           tag: tag,
         })
         for (let searchResult of searchResults) {
@@ -426,18 +426,18 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
         searchType = "basic"
         currentSearchTerm = query
       } else {
-        // default search by tags Index
-        searchResults = await Index.searchAsync({
+        // default search by tags index
+        searchResults = await index.searchAsync({
           query: currentSearchTerm,
           limit: numSearchResults,
-          Index: ["tags"],
+          index: ["tags"],
         })
       }
     } else if (searchType === "basic") {
-      searchResults = await Index.searchAsync({
+      searchResults = await index.searchAsync({
         query: currentSearchTerm,
         limit: numSearchResults,
-        Index: ["title", "content"],
+        index: ["title", "content"],
       })
     }
 
@@ -469,15 +469,15 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
 
 /**
  * Fills flexsearch document with data
- * @param Index Index to fill
- * @param data data to fill Index with
+ * @param index index to fill
+ * @param data data to fill index with
  */
 async function fillDocument(data: { [key: FullSlug]: ContentDetails }) {
   let id = 0
   const promises: Array<Promise<unknown>> = []
   for (const [slug, fileData] of Object.entries<ContentDetails>(data)) {
     promises.push(
-      Index.addAsync(id++, {
+      index.addAsync(id++, {
         id,
         slug: slug as FullSlug,
         title: fileData.title,

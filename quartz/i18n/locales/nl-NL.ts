@@ -74,7 +74,7 @@ export default {
     },
     tagContent: {
       tag: "Label",
-      tagIndex: "Label-Index",
+      tagIndex: "Label-index",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 item met dit label." : `${count} items met dit label.`,
       showingFirst: ({ count }) =>
