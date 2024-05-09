@@ -78,7 +78,7 @@ export default {
     },
     tagContent: {
       tag: "الوسم",
-      tagIndex: "مؤشر الوسم",
+      tagindex: "مؤشر الوسم",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "يوجد عنصر واحد فقط تحت هذا الوسم" : `يوجد ${count} عناصر تحت هذا الوسم.`,
       showingFirst: ({ count }) => `إظهار أول ${count} أوسمة.`,

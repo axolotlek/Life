@@ -75,7 +75,7 @@ export default {
     },
     tagContent: {
       tag: "Тег",
-      tagIndex: "Индекс тегов",
+      tagindex: "Индекс тегов",
       itemsUnderTag: ({ count }) => `с этим тегом ${count} элемент${getForm(count, "", "а", "ов")}`,
       showingFirst: ({ count }) =>
         `Показыва${getForm(count, "ется", "ются", "ются")} ${count} тег${getForm(count, "", "а", "ов")}`,

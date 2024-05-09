@@ -9,7 +9,7 @@ import { write } from "./helpers"
 import { i18n } from "../../i18n"
 import DepGraph from "../../depgraph"
 
-export type ContentIndex = Map<FullSlug, ContentDetails>
+export type Contentindex = Map<FullSlug, ContentDetails>
 export type ContentDetails = {
   title: string
   links: SimpleSlug[]
@@ -36,7 +36,7 @@ const defaultOptions: Options = {
   includeEmptyFiles: true,
 }
 
-function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
+function generateSiteMap(cfg: GlobalConfiguration, idx: Contentindex): string {
   const base = cfg.baseUrl ?? ""
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<url>
     <loc>https://${joinSegments(base, encodeURI(slug))}</loc>
@@ -48,7 +48,7 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
   return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`
 }
 
-function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: number): string {
+function generateRSSFeed(cfg: GlobalConfiguration, idx: Contentindex, limit?: number): string {
   const base = cfg.baseUrl ?? ""
 
   const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
@@ -89,10 +89,10 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
   </rss>`
 }
 
-export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
+export const Contentindex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
   opts = { ...defaultOptions, ...opts }
   return {
-    name: "ContentIndex",
+    name: "Contentindex",
     async getDependencyGraph(ctx, content, _resources) {
       const graph = new DepGraph<FilePath>()
 
@@ -101,13 +101,13 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
 
         graph.addEdge(
           sourcePath,
-          joinSegments(ctx.argv.output, "static/contentIndex.json") as FilePath,
+          joinSegments(ctx.argv.output, "static/contentindex.json") as FilePath,
         )
         if (opts?.enableSiteMap) {
           graph.addEdge(sourcePath, joinSegments(ctx.argv.output, "sitemap.xml") as FilePath)
         }
         if (opts?.enableRSS) {
-          graph.addEdge(sourcePath, joinSegments(ctx.argv.output, "Index.xml") as FilePath)
+          graph.addEdge(sourcePath, joinSegments(ctx.argv.output, "index.xml") as FilePath)
         }
       }
 
@@ -116,12 +116,12 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
     async emit(ctx, content, _resources) {
       const cfg = ctx.cfg.configuration
       const emitted: FilePath[] = []
-      const linkIndex: ContentIndex = new Map()
+      const linkindex: Contentindex = new Map()
       for (const [tree, file] of content) {
         const slug = file.data.slug!
         const date = getDate(ctx.cfg.configuration, file.data) ?? new Date()
         if (opts?.includeEmptyFiles || (file.data.text && file.data.text !== "")) {
-          linkIndex.set(slug, {
+          linkindex.set(slug, {
             title: file.data.frontmatter?.title!,
             links: file.data.links ?? [],
             tags: file.data.frontmatter?.tags ?? [],
@@ -139,7 +139,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
         emitted.push(
           await write({
             ctx,
-            content: generateSiteMap(cfg, linkIndex),
+            content: generateSiteMap(cfg, linkindex),
             slug: "sitemap" as FullSlug,
             ext: ".xml",
           }),
@@ -150,18 +150,18 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
         emitted.push(
           await write({
             ctx,
-            content: generateRSSFeed(cfg, linkIndex, opts.rssLimit),
-            slug: "Index" as FullSlug,
+            content: generateRSSFeed(cfg, linkindex, opts.rssLimit),
+            slug: "index" as FullSlug,
             ext: ".xml",
           }),
         )
       }
 
-      const fp = joinSegments("static", "contentIndex") as FullSlug
-      const simplifiedIndex = Object.fromEntries(
-        Array.from(linkIndex).map(([slug, content]) => {
-          // remove description and from content Index as nothing downstream
-          // actually uses it. we only keep it in the Index as we need it
+      const fp = joinSegments("static", "contentindex") as FullSlug
+      const simplifiedindex = Object.fromEntries(
+        Array.from(linkindex).map(([slug, content]) => {
+          // remove description and from content index as nothing downstream
+          // actually uses it. we only keep it in the index as we need it
           // for the RSS feed
           delete content.description
           delete content.date
@@ -172,7 +172,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       emitted.push(
         await write({
           ctx,
-          content: JSON.stringify(simplifiedIndex),
+          content: JSON.stringify(simplifiedindex),
           slug: fp,
           ext: ".json",
         }),

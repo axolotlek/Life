@@ -72,7 +72,7 @@ export default {
     },
     tagContent: {
       tag: "タグ",
-      tagIndex: "タグ一覧",
+      tagindex: "タグ一覧",
       itemsUnderTag: ({ count }) => `${count}件のページ`,
       showingFirst: ({ count }) => `のうち最初の${count}件を表示しています`,
       totalTags: ({ count }) => `全${count}個のタグを表示中`,

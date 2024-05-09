@@ -8,18 +8,18 @@ describe("typeguards", () => {
     assert(path.isSimpleSlug(""))
     assert(path.isSimpleSlug("abc"))
     assert(path.isSimpleSlug("abc/"))
-    assert(path.isSimpleSlug("notIndex"))
-    assert(path.isSimpleSlug("notIndex/def"))
+    assert(path.isSimpleSlug("notindex"))
+    assert(path.isSimpleSlug("notindex/def"))
 
     assert(!path.isSimpleSlug("//"))
-    assert(!path.isSimpleSlug("Index"))
+    assert(!path.isSimpleSlug("index"))
     assert(!path.isSimpleSlug("https://example.com"))
     assert(!path.isSimpleSlug("/abc"))
-    assert(!path.isSimpleSlug("abc/Index"))
+    assert(!path.isSimpleSlug("abc/index"))
     assert(!path.isSimpleSlug("abc#anchor"))
     assert(!path.isSimpleSlug("abc?query=1"))
-    assert(!path.isSimpleSlug("Index.md"))
-    assert(!path.isSimpleSlug("Index.html"))
+    assert(!path.isSimpleSlug("index.md"))
+    assert(!path.isSimpleSlug("index.html"))
   })
 
   test("isRelativeURL", () => {
@@ -39,7 +39,7 @@ describe("typeguards", () => {
   })
 
   test("isFullSlug", () => {
-    assert(path.isFullSlug("Index"))
+    assert(path.isFullSlug("index"))
     assert(path.isFullSlug("abc/def"))
     assert(path.isFullSlug("html.energy"))
     assert(path.isFullSlug("test.pdf"))
@@ -53,7 +53,7 @@ describe("typeguards", () => {
   })
 
   test("isFilePath", () => {
-    assert(path.isFilePath("content/Index.md"))
+    assert(path.isFilePath("content/index.md"))
     assert(path.isFilePath("content/test.png"))
     assert(!path.isFilePath("../test.pdf"))
     assert(!path.isFilePath("content/test"))
@@ -83,9 +83,9 @@ describe("transforms", () => {
   test("simplifySlug", () => {
     asserts(
       [
-        ["Index", "/"],
+        ["index", "/"],
         ["abc", "abc"],
-        ["abc/Index", "abc/"],
+        ["abc/index", "abc/"],
         ["abc/def", "abc/def"],
       ],
       path.simplifySlug,
@@ -97,12 +97,12 @@ describe("transforms", () => {
   test("slugifyFilePath", () => {
     asserts(
       [
-        ["content/Index.md", "content/Index"],
-        ["content/Index.html", "content/Index"],
-        ["content/_Index.md", "content/Index"],
-        ["/content/Index.md", "content/Index"],
+        ["content/index.md", "content/index"],
+        ["content/index.html", "content/index"],
+        ["content/_index.md", "content/index"],
+        ["/content/index.md", "content/index"],
         ["content/cool.png", "content/cool.png"],
-        ["Index.md", "Index"],
+        ["index.md", "index"],
         ["test.mp4", "test.mp4"],
         ["note with spaces.md", "note-with-spaces"],
         ["notes.with.dots.md", "notes.with.dots"],
@@ -122,11 +122,11 @@ describe("transforms", () => {
         ["", "."],
         [".", "."],
         ["./", "./"],
-        ["./Index", "./"],
-        ["./Index#abc", "./#abc"],
-        ["./Index.html", "./"],
-        ["./Index.md", "./"],
-        ["./Index.css", "./Index.css"],
+        ["./index", "./"],
+        ["./index#abc", "./#abc"],
+        ["./index.html", "./"],
+        ["./index.md", "./"],
+        ["./index.css", "./index.css"],
         ["content", "./content"],
         ["content/test.md", "./content/test"],
         ["content/test.pdf", "./content/test.pdf"],
@@ -135,7 +135,7 @@ describe("transforms", () => {
         ["tags/", "./tags/"],
         ["/tags/", "./tags/"],
         ["content/with spaces", "./content/with-spaces"],
-        ["content/with spaces/Index", "./content/with-spaces/"],
+        ["content/with spaces/index", "./content/with-spaces/"],
         ["content/with spaces#and Anchor!", "./content/with-spaces#and-anchor"],
       ],
       path.transformInternalLink,
@@ -147,11 +147,11 @@ describe("transforms", () => {
   test("pathToRoot", () => {
     asserts(
       [
-        ["Index", "."],
+        ["index", "."],
         ["abc", "."],
         ["abc/def", ".."],
         ["abc/def/ghi", "../.."],
-        ["abc/def/Index", "../.."],
+        ["abc/def/index", "../.."],
       ],
       path.pathToRoot,
       path.isFullSlug,
@@ -164,10 +164,10 @@ describe("link strategies", () => {
   const allSlugs = [
     "a/b/c",
     "a/b/d",
-    "a/b/Index",
+    "a/b/index",
     "e/f",
     "e/g/h",
-    "Index",
+    "index",
     "a/test.png",
   ] as FullSlug[]
 
@@ -180,29 +180,29 @@ describe("link strategies", () => {
     test("from a/b/c", () => {
       const cur = "a/b/c" as FullSlug
       assert.strictEqual(path.transformLink(cur, "a/b/d", opts), "../../a/b/d")
-      assert.strictEqual(path.transformLink(cur, "a/b/Index", opts), "../../a/b/")
+      assert.strictEqual(path.transformLink(cur, "a/b/index", opts), "../../a/b/")
       assert.strictEqual(path.transformLink(cur, "e/f", opts), "../../e/f")
       assert.strictEqual(path.transformLink(cur, "e/g/h", opts), "../../e/g/h")
-      assert.strictEqual(path.transformLink(cur, "Index", opts), "../../")
-      assert.strictEqual(path.transformLink(cur, "Index.png", opts), "../../Index.png")
-      assert.strictEqual(path.transformLink(cur, "Index#abc", opts), "../../#abc")
+      assert.strictEqual(path.transformLink(cur, "index", opts), "../../")
+      assert.strictEqual(path.transformLink(cur, "index.png", opts), "../../index.png")
+      assert.strictEqual(path.transformLink(cur, "index#abc", opts), "../../#abc")
       assert.strictEqual(path.transformLink(cur, "tag/test", opts), "../../tag/test")
       assert.strictEqual(path.transformLink(cur, "a/b/c#test", opts), "../../a/b/c#test")
       assert.strictEqual(path.transformLink(cur, "a/test.png", opts), "../../a/test.png")
     })
 
-    test("from a/b/Index", () => {
-      const cur = "a/b/Index" as FullSlug
+    test("from a/b/index", () => {
+      const cur = "a/b/index" as FullSlug
       assert.strictEqual(path.transformLink(cur, "a/b/d", opts), "../../a/b/d")
       assert.strictEqual(path.transformLink(cur, "a/b", opts), "../../a/b")
-      assert.strictEqual(path.transformLink(cur, "Index", opts), "../../")
+      assert.strictEqual(path.transformLink(cur, "index", opts), "../../")
     })
 
-    test("from Index", () => {
-      const cur = "Index" as FullSlug
-      assert.strictEqual(path.transformLink(cur, "Index", opts), "./")
+    test("from index", () => {
+      const cur = "index" as FullSlug
+      assert.strictEqual(path.transformLink(cur, "index", opts), "./")
       assert.strictEqual(path.transformLink(cur, "a/b/c", opts), "./a/b/c")
-      assert.strictEqual(path.transformLink(cur, "a/b/Index", opts), "./a/b/")
+      assert.strictEqual(path.transformLink(cur, "a/b/index", opts), "./a/b/")
     })
   })
 
@@ -216,29 +216,29 @@ describe("link strategies", () => {
       const cur = "a/b/c" as FullSlug
       assert.strictEqual(path.transformLink(cur, "d", opts), "../../a/b/d")
       assert.strictEqual(path.transformLink(cur, "h", opts), "../../e/g/h")
-      assert.strictEqual(path.transformLink(cur, "a/b/Index", opts), "../../a/b/")
-      assert.strictEqual(path.transformLink(cur, "a/b/Index.png", opts), "../../a/b/Index.png")
-      assert.strictEqual(path.transformLink(cur, "a/b/Index#abc", opts), "../../a/b/#abc")
-      assert.strictEqual(path.transformLink(cur, "Index", opts), "../../")
-      assert.strictEqual(path.transformLink(cur, "Index.png", opts), "../../Index.png")
+      assert.strictEqual(path.transformLink(cur, "a/b/index", opts), "../../a/b/")
+      assert.strictEqual(path.transformLink(cur, "a/b/index.png", opts), "../../a/b/index.png")
+      assert.strictEqual(path.transformLink(cur, "a/b/index#abc", opts), "../../a/b/#abc")
+      assert.strictEqual(path.transformLink(cur, "index", opts), "../../")
+      assert.strictEqual(path.transformLink(cur, "index.png", opts), "../../index.png")
       assert.strictEqual(path.transformLink(cur, "test.png", opts), "../../a/test.png")
-      assert.strictEqual(path.transformLink(cur, "Index#abc", opts), "../../#abc")
+      assert.strictEqual(path.transformLink(cur, "index#abc", opts), "../../#abc")
     })
 
-    test("from a/b/Index", () => {
-      const cur = "a/b/Index" as FullSlug
+    test("from a/b/index", () => {
+      const cur = "a/b/index" as FullSlug
       assert.strictEqual(path.transformLink(cur, "d", opts), "../../a/b/d")
       assert.strictEqual(path.transformLink(cur, "h", opts), "../../e/g/h")
-      assert.strictEqual(path.transformLink(cur, "a/b/Index", opts), "../../a/b/")
-      assert.strictEqual(path.transformLink(cur, "Index", opts), "../../")
+      assert.strictEqual(path.transformLink(cur, "a/b/index", opts), "../../a/b/")
+      assert.strictEqual(path.transformLink(cur, "index", opts), "../../")
     })
 
-    test("from Index", () => {
-      const cur = "Index" as FullSlug
+    test("from index", () => {
+      const cur = "index" as FullSlug
       assert.strictEqual(path.transformLink(cur, "d", opts), "./a/b/d")
       assert.strictEqual(path.transformLink(cur, "h", opts), "./e/g/h")
-      assert.strictEqual(path.transformLink(cur, "a/b/Index", opts), "./a/b/")
-      assert.strictEqual(path.transformLink(cur, "Index", opts), "./")
+      assert.strictEqual(path.transformLink(cur, "a/b/index", opts), "./a/b/")
+      assert.strictEqual(path.transformLink(cur, "index", opts), "./")
     })
   })
 
@@ -251,10 +251,10 @@ describe("link strategies", () => {
     test("from a/b/c", () => {
       const cur = "a/b/c" as FullSlug
       assert.strictEqual(path.transformLink(cur, "d", opts), "./d")
-      assert.strictEqual(path.transformLink(cur, "Index", opts), "./")
-      assert.strictEqual(path.transformLink(cur, "../../../Index", opts), "../../../")
-      assert.strictEqual(path.transformLink(cur, "../../../Index.png", opts), "../../../Index.png")
-      assert.strictEqual(path.transformLink(cur, "../../../Index#abc", opts), "../../../#abc")
+      assert.strictEqual(path.transformLink(cur, "index", opts), "./")
+      assert.strictEqual(path.transformLink(cur, "../../../index", opts), "../../../")
+      assert.strictEqual(path.transformLink(cur, "../../../index.png", opts), "../../../index.png")
+      assert.strictEqual(path.transformLink(cur, "../../../index#abc", opts), "../../../#abc")
       assert.strictEqual(path.transformLink(cur, "../../../", opts), "../../../")
       assert.strictEqual(
         path.transformLink(cur, "../../../a/test.png", opts),
@@ -265,18 +265,18 @@ describe("link strategies", () => {
       assert.strictEqual(path.transformLink(cur, "../../../e/g/h#abc", opts), "../../../e/g/h#abc")
     })
 
-    test("from a/b/Index", () => {
-      const cur = "a/b/Index" as FullSlug
-      assert.strictEqual(path.transformLink(cur, "../../Index", opts), "../../")
+    test("from a/b/index", () => {
+      const cur = "a/b/index" as FullSlug
+      assert.strictEqual(path.transformLink(cur, "../../index", opts), "../../")
       assert.strictEqual(path.transformLink(cur, "../../", opts), "../../")
       assert.strictEqual(path.transformLink(cur, "../../e/g/h", opts), "../../e/g/h")
       assert.strictEqual(path.transformLink(cur, "c", opts), "./c")
     })
 
-    test("from Index", () => {
-      const cur = "Index" as FullSlug
+    test("from index", () => {
+      const cur = "index" as FullSlug
       assert.strictEqual(path.transformLink(cur, "e/g/h", opts), "./e/g/h")
-      assert.strictEqual(path.transformLink(cur, "a/b/Index", opts), "./a/b/")
+      assert.strictEqual(path.transformLink(cur, "a/b/index", opts), "./a/b/")
     })
   })
 })

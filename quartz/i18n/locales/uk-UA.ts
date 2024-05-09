@@ -73,7 +73,7 @@ export default {
     },
     tagContent: {
       tag: "Тег",
-      tagIndex: "Індекс тегу",
+      tagindex: "Індекс тегу",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 елемент з цим тегом." : `Елементів з цим тегом: ${count}.`,
       showingFirst: ({ count }) => `Показ перших ${count} тегів.`,
