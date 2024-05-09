@@ -260,11 +260,11 @@ async function partialRebuildFromEntrypoint(
     // only call the emitter if it uses this file
     if (depGraph.hasNode(fp)) {
       // re-emit using all files that are needed for the downstream of this file
-      // eg. for Contentindex, the dep graph could be:
-      // a.md --> contentindex.json
+      // eg. for ContentIndex, the dep graph could be:
+      // a.md --> contentIndex.json
       // b.md ------^
       //
-      // if a.md changes, we need to re-emit contentindex.json,
+      // if a.md changes, we need to re-emit contentIndex.json,
       // and supply [a.md, b.md] to the emitter
       const upstreams = [...depGraph.getLeafNodeAncestors(fp)] as FilePath[]
 

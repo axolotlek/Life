@@ -1,5 +1,5 @@
 import FlexSearch from "flexsearch"
-import { ContentDetails } from "../../plugins/emitters/contentindex"
+import { ContentDetails } from "../../plugins/emitters/contentIndex"
 import { registerEscapeHandler, removeAllChildren } from "./util"
 import { FullSlug, normalizeRelativeURLs, resolveRelative } from "../../util/path"
 
@@ -16,13 +16,13 @@ type SearchType = "basic" | "tags"
 let searchType: SearchType = "basic"
 let currentSearchTerm: string = ""
 const encoder = (str: string) => str.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/)
-let index = new FlexSearch.Document<Item>({
+let Index = new FlexSearch.Document<Item>({
   charset: "latin:extra",
   encode: encoder,
   document: {
     id: "id",
     tag: "tags",
-    index: [
+    Index: [
       {
         field: "title",
         tokenize: "forward",
@@ -61,27 +61,27 @@ function highlight(searchTerm: string, text: string, trim?: boolean) {
   const tokenizedTerms = tokenizeTerm(searchTerm)
   let tokenizedText = text.split(/\s+/).filter((t) => t !== "")
 
-  let startindex = 0
-  let endindex = tokenizedText.length - 1
+  let startIndex = 0
+  let endIndex = tokenizedText.length - 1
   if (trim) {
     const includesCheck = (tok: string) =>
       tokenizedTerms.some((term) => tok.toLowerCase().startsWith(term.toLowerCase()))
     const occurrencesIndices = tokenizedText.map(includesCheck)
 
     let bestSum = 0
-    let bestindex = 0
+    let bestIndex = 0
     for (let i = 0; i < Math.max(tokenizedText.length - contextWindowWords, 0); i++) {
       const window = occurrencesIndices.slice(i, i + contextWindowWords)
       const windowSum = window.reduce((total, cur) => total + (cur ? 1 : 0), 0)
       if (windowSum >= bestSum) {
         bestSum = windowSum
-        bestindex = i
+        bestIndex = i
       }
     }
 
-    startindex = Math.max(bestindex - contextWindowWords, 0)
-    endindex = Math.min(startindex + 2 * contextWindowWords, tokenizedText.length - 1)
-    tokenizedText = tokenizedText.slice(startindex, endindex)
+    startIndex = Math.max(bestIndex - contextWindowWords, 0)
+    endIndex = Math.min(startIndex + 2 * contextWindowWords, tokenizedText.length - 1)
+    tokenizedText = tokenizedText.slice(startIndex, endIndex)
   }
 
   const slice = tokenizedText
@@ -97,8 +97,8 @@ function highlight(searchTerm: string, text: string, trim?: boolean) {
     })
     .join(" ")
 
-  return `${startindex === 0 ? "" : "..."}${slice}${
-    endindex === tokenizedText.length - 1 ? "" : "..."
+  return `${startIndex === 0 ? "" : "..."}${slice}${
+    endIndex === tokenizedText.length - 1 ? "" : "..."
   }`
 }
 
@@ -121,14 +121,14 @@ function highlightHTML(searchTerm: string, el: HTMLElement) {
       const matches = nodeText.match(regex)
       if (!matches || matches.length === 0) return
       const spanContainer = document.createElement("span")
-      let lastindex = 0
+      let lastIndex = 0
       for (const match of matches) {
-        const matchindex = nodeText.indexOf(match, lastindex)
-        spanContainer.appendChild(document.createTextNode(nodeText.slice(lastindex, matchindex)))
+        const matchIndex = nodeText.IndexOf(match, lastIndex)
+        spanContainer.appendChild(document.createTextNode(nodeText.slice(lastIndex, matchIndex)))
         spanContainer.appendChild(createHighlightSpan(match))
-        lastindex = matchindex + match.length
+        lastIndex = matchIndex + match.length
       }
-      spanContainer.appendChild(document.createTextNode(nodeText.slice(lastindex)))
+      spanContainer.appendChild(document.createTextNode(nodeText.slice(lastIndex)))
       node.parentNode?.replaceChild(spanContainer, node)
     } else if (node.nodeType === Node.ELEMENT_NODE) {
       if ((node as HTMLElement).classList.contains("highlight")) return
@@ -178,7 +178,7 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
       searchBar.value = "" // clear the input when we dismiss the search
     }
     if (sidebar) {
-      sidebar.style.zindex = "unset"
+      sidebar.style.zIndex = "unset"
     }
     if (results) {
       removeAllChildren(results)
@@ -196,7 +196,7 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   function showSearch(searchTypeNew: SearchType) {
     searchType = searchTypeNew
     if (sidebar) {
-      sidebar.style.zindex = "1"
+      sidebar.style.zIndex = "1"
     }
     container?.classList.add("active")
     searchBar?.focus()
@@ -399,7 +399,7 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
   }
 
   async function onType(e: HTMLElementEventMap["input"]) {
-    if (!searchLayout || !index) return
+    if (!searchLayout || !Index) return
     currentSearchTerm = (e.target as HTMLInputElement).value
     searchLayout.classList.toggle("display-results", currentSearchTerm !== "")
     searchType = currentSearchTerm.startsWith("#") ? "tags" : "basic"
@@ -407,16 +407,16 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
     let searchResults: FlexSearch.SimpleDocumentSearchResultSetUnit[]
     if (searchType === "tags") {
       currentSearchTerm = currentSearchTerm.substring(1).trim()
-      const separatorindex = currentSearchTerm.indexOf(" ")
-      if (separatorindex != -1) {
-        // search by title and content index and then filter by tag (implemented in flexsearch)
-        const tag = currentSearchTerm.substring(0, separatorindex)
-        const query = currentSearchTerm.substring(separatorindex + 1).trim()
-        searchResults = await index.searchAsync({
+      const separatorIndex = currentSearchTerm.IndexOf(" ")
+      if (separatorIndex != -1) {
+        // search by title and content Index and then filter by tag (implemented in flexsearch)
+        const tag = currentSearchTerm.substring(0, separatorIndex)
+        const query = currentSearchTerm.substring(separatorIndex + 1).trim()
+        searchResults = await Index.searchAsync({
           query: query,
           // return at least 10000 documents, so it is enough to filter them by tag (implemented in flexsearch)
           limit: Math.max(numSearchResults, 10000),
-          index: ["title", "content"],
+          Index: ["title", "content"],
           tag: tag,
         })
         for (let searchResult of searchResults) {
@@ -426,18 +426,18 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
         searchType = "basic"
         currentSearchTerm = query
       } else {
-        // default search by tags index
-        searchResults = await index.searchAsync({
+        // default search by tags Index
+        searchResults = await Index.searchAsync({
           query: currentSearchTerm,
           limit: numSearchResults,
-          index: ["tags"],
+          Index: ["tags"],
         })
       }
     } else if (searchType === "basic") {
-      searchResults = await index.searchAsync({
+      searchResults = await Index.searchAsync({
         query: currentSearchTerm,
         limit: numSearchResults,
-        index: ["title", "content"],
+        Index: ["title", "content"],
       })
     }
 
@@ -469,15 +469,15 @@ document.addEventListener("nav", async (e: CustomEventMap["nav"]) => {
 
 /**
  * Fills flexsearch document with data
- * @param index index to fill
- * @param data data to fill index with
+ * @param Index Index to fill
+ * @param data data to fill Index with
  */
 async function fillDocument(data: { [key: FullSlug]: ContentDetails }) {
   let id = 0
   const promises: Array<Promise<unknown>> = []
   for (const [slug, fileData] of Object.entries<ContentDetails>(data)) {
     promises.push(
-      index.addAsync(id++, {
+      Index.addAsync(id++, {
         id,
         slug: slug as FullSlug,
         title: fileData.title,

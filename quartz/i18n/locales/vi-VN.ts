@@ -73,7 +73,7 @@ export default {
     },
     tagContent: {
       tag: "Thẻ",
-      tagindex: "Thẻ Mục Lục",
+      tagIndex: "Thẻ Mục Lục",
       itemsUnderTag: ({ count }) =>
         count === 1 ? "1 mục gắn thẻ này." : `${count} mục gắn thẻ này.`,
       showingFirst: ({ count }) => `Hiển thị trước ${count} thẻ.`,

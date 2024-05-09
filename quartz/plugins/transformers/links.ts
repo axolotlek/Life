@@ -49,7 +49,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options> | undefined> =
               allSlugs: ctx.allSlugs,
             }
 
-            visit(tree, "element", (node, _index, _parent) => {
+            visit(tree, "element", (node, _Index, _parent) => {
               // rewrite all links
               if (
                 node.tagName === "a" &&
@@ -112,7 +112,7 @@ export const CrawlLinks: QuartzTransformerPlugin<Partial<Options> | undefined> =
                   const canonicalDest = url.pathname
                   let [destCanonical, _destAnchor] = splitAnchor(canonicalDest)
                   if (destCanonical.endsWith("/")) {
-                    destCanonical += "index"
+                    destCanonical += "Index"
                   }
 
                   // need to decodeURIComponent here as WHATWG URL percent-encodes everything
