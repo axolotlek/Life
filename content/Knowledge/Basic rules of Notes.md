@@ -11,3 +11,5 @@ type: permanent
 
 ## Extra Types:
 - Index - a note that navigate you through topic
+
+## ![[Tagging System]]
