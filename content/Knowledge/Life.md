@@ -6,4 +6,4 @@ tags:
 type: index
 ---
 # Life
-[[]]
+[[Money]]

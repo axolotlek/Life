@@ -1,7 +1,16 @@
 ---
 tags:
-- navigator
+  - linux
+  - it
+  - pc
+type: index
+language:
+  - en
+  - ru
 ---
-# 00Linux
-## Navigator
-- [[Важная инфа о Linux]]
+# Linux
+[[Partitioning]]
+[[User Creation]]
+[[CLI Variables]]
+[[SSH]]
+[[Важная инфа о Linux]]

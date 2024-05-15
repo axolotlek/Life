@@ -1,6 +1,7 @@
 # Index
 [[__Homepage.canvas|__Homepage]]
-![[Obsidian]]
+[[Obsidian]]
 
+[[Life]]
 ## Topics
-![[Life]]
+[[IT]]

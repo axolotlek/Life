@@ -4,4 +4,4 @@ tags:
 type: 
 aliases:
 ---
-# [%%](<% tp.file.title %>)
+# [%%](Untitled 12)

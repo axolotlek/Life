@@ -1,5 +1,14 @@
+---
+language:
+  - en
+tags:
+  - obsidian
+type:
+  - index
+aliases:
+  - Обсидиан
+---
 # Obsidian
-## References
 - [[Basic rules of Using Obsidian]]
 - [[Basic rules of Notes]]
 - [[Markdown Syntax]]
