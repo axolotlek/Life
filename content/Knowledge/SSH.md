@@ -7,6 +7,7 @@ tags:
   - cli
 type:
   - index
+
 ---
 # SSH
 [[Proxy through SSH]]

@@ -3,6 +3,7 @@ language: ru
 tags:
   - tip
 type: tip
+
 ---
 # YES Minimal Organization, No structure just connect
 

@@ -6,6 +6,7 @@ tags:
   - pc
   - os
 type: index
+
 ---
 # IT
 [[Linux]]

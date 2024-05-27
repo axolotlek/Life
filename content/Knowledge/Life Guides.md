@@ -1,6 +1,7 @@
 ---
 tags:
-- navigator
+  - navigator
+
 ---
 # Navigator
 ## [[Life Mind Map]]

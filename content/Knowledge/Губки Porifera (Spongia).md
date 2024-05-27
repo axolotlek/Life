@@ -1,5 +1,6 @@
 ---
 kingdom: parazoa
+
 ---
 # Губки Porifera (Spongia)
 ![[photo_2023-10-25_17-15-15.jpg]]

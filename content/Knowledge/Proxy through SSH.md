@@ -7,6 +7,7 @@ tags:
   - cli
 type:
   - permanent
+
 ---
 # Proxy through SSH
 

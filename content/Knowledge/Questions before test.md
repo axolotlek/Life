@@ -1,3 +1,6 @@
+---
+
+---
 - [x] Did you make a serious effort to understand the text?
 - [x] Did you work with classmates on homework problems or at least check your solutions with others?
 - [x] Did you attempt to outline every homework problem solution before working with classmates?

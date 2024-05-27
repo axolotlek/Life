@@ -7,6 +7,7 @@ type: index
 language:
   - en
   - ru
+
 ---
 # Linux
 [[Partitioning]]

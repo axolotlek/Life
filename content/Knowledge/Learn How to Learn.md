@@ -1,6 +1,7 @@
 ---
 tags:
-- navigator
+  - navigator
+
 ---
 ![[Learn How to Learn.canvas]]
 # Navigator

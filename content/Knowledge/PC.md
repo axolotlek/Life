@@ -1,6 +1,7 @@
 ---
 tags:
-- navigator
+  - navigator
+
 ---
 # PC
 ## Navigator

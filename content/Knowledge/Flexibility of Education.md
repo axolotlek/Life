@@ -4,7 +4,8 @@ language:
 tags: 
 type:
   - definition
-aliases:
+aliases: 
+
 ---
 # Flexibility of Education
 Possibility of studying under variety of conditions

@@ -1,3 +1,6 @@
+---
+
+---
 # Obsidian Links
 ## Main
 ### Show File in The Document

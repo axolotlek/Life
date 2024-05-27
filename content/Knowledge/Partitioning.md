@@ -13,6 +13,7 @@ aliases:
   - partitions
   - disk
   - btrfs
+
 ---
 # Partitioning
 # My Scheme

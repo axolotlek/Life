@@ -1,3 +1,6 @@
+---
+
+---
 # arc-Функции
 ![[../Sources/arcfun.pdf]]
 

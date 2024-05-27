@@ -3,10 +3,10 @@ language:
   - en
 tags:
   - obsidian
-type:
-  - index
+type: index
 aliases:
   - Обсидиан
+
 ---
 # Obsidian
 - [[Basic rules of Using Obsidian]]

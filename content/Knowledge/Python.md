@@ -1,7 +1,8 @@
 ---
 tags:
-- navigator
-- navigator02
+  - navigator
+  - navigator02
+
 ---
 # 02Python
 ## Navigator

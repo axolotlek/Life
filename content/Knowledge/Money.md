@@ -6,6 +6,7 @@ tags:
   - life
 type:
   - index
+
 ---
 # Money
 [[Actual Budget App]]

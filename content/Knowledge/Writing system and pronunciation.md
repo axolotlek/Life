@@ -1,5 +1,6 @@
 ---
 tags:
-- navigator
+  - navigator
+
 ---
 [[Hiragana and Katakana Differences]]

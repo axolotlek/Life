@@ -6,6 +6,7 @@ tags:
   - zettelkasten
   - obsidian
 type: permanent
+
 ---
 # Zettelkasten
 The main principle of this method - atomicity. Each note = separate idea

@@ -1,3 +1,6 @@
+---
+
+---
 ![[Вариант 23 пифагор.excalidraw.png]]
 %%[[Вариант 23 пифагор.excalidraw|🖋 Edit in Excalidraw]], and the [[Вариант 11 100ballov 2023-02-17 15.34.43.excalidraw.dark.png|dark exported image]]%%
 ![[Вариант 23 pifagor 2.excalidraw.png]]
